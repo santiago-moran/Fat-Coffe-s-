@@ -60,6 +60,7 @@ h2 {
     align-items: center;
     border-radius: 100%;
     background-color: #f00a;
+    display: none;
 }
 #inputSearchContainer {
     position: absolute;

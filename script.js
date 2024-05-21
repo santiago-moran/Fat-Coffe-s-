@@ -67,6 +67,10 @@ const verifyDataContent = (shopCart, subTotal) => {
             if (cursor) {
                 if (cursor.result != null) {
                     added.push(cursor.result.value);
+                    if (cartLength.style.display = 'none') {
+                        cartLength.style.display = 'flex';
+                    }
+                    cartLength.textContent = added.length;
                     cursor.result.continue();
                 }
                 else {
@@ -92,6 +96,7 @@ const verifyDataContent = (shopCart, subTotal) => {
 const addToCart = async () => {
     let shopCart = document.getElementById('cartItems');
     let subTotal = document.getElementById('subTotal');
+    let cartLength = document.getElementById('cartLength');
     if (pageHasLoaded) {
         verifyDataContent(shopCart, subTotal);
     }
@@ -100,6 +105,9 @@ const addToCart = async () => {
         if (addBtn != null) {
             addBtn.addEventListener('click', () => {
                 let finded = false;
+                if (cartLength.style.display == 'none') {
+                    cartLength.style.display = 'flex';
+                }
                 if (added.length == 0) {
                     shopCart.innerHTML = '';
                     subTotal.style.display = 'block';
@@ -115,6 +123,7 @@ const addToCart = async () => {
                         amount.value = 1;
                     }
                     added.push({type: coffee.name, price: coffee.price, amount: parseInt(amount.value)});
+                    cartLength.textContent = added.length;
                     addToDataBase(coffee);
                     added.forEach(e=> {
                         if(e.type == coffee.name) {
@@ -248,6 +257,7 @@ const generateElement = (coffee, shopCart, e, subTotal) => {
     let btnClicked;
     trash.addEventListener('click', () => {
         added.splice(added.indexOf(e), 1);
+        cartLength.textContent = added.length;
         result = 0;
         added.forEach(el=> {
             result += el.amount*el.price;
@@ -256,6 +266,7 @@ const generateElement = (coffee, shopCart, e, subTotal) => {
         if (added.length == 0) {
             shopCart.innerHTML = `<p class="emptyCartText">Carrito Vacio</p>`;
             subTotal.style.display = 'none';
+            cartLength.style.display = 'none';
         }
         newElement.remove();
         deleteFromDataBase(coffee);
