@@ -34,7 +34,7 @@ const createCards = async () => {
             <p class="price">$${coffee.price}</p>
             </div>
             <div class="card__addToCart">
-            <input type="number"id="amount${coffee.id}" class= "amount" value="1" min="0" max="10">
+            <input type="number"id="amount${coffee.id}" class= "amount" value="1" min="1" max="10">
             <button id="addBtn${coffee.id}" class= "addBtn">Agregar</button>
             </div>
             `;
@@ -111,7 +111,7 @@ const addToCart = async () => {
                 })
                 if (finded == false) {
                     let amount = document.getElementById(`amount${coffee.id}`);
-                    if (parseInt(amount.value) <= 0) {
+                    if (parseInt(amount.value) <= 0 || amount.value == '') {
                         amount.value = 1;
                     }
                     added.push({type: coffee.name, price: coffee.price, amount: parseInt(amount.value)});
