@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/79a487990f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Fat Coffee's - Shop</title>
+</head>
+<body>
+    <header>
+        <div id="inputSearchContainer">
+            <input type="text" placeholder="Buscar producto" id="searchProduct">
+            <i class="fa-solid fa-magnifying-glass" id="search"></i>
+        </div>
+        <nav class="navBar">
+            <h1><a href="index.html">Fat Coffe's</a></h1>
+            
+            <div class="navBar__rightSide">
+                <div class="navBar__rightSide__search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="cartSection hidden">
+            <div class="cartSection__header">
+                <i class="fa-solid fa-xmark"></i>
+                <h2>Carrito de compras</h2>
+            </div>
+            <div id="cartItems">
+                <p class="emptyCartText">Carrito Vacio</p>
+            </div>
+            <div>
+                <p id="subTotal">Subtotal: $<span id="finalPrice"></span></p>
+            </div>
+        </div>
+        <section id="cardsSection"></section>
+    </main>
+    <footer>
+        <p>Fat Coffe's</p>
+        <p>Derechos reservados</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
