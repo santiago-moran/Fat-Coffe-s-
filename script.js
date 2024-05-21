@@ -111,6 +111,9 @@ const addToCart = async () => {
                 })
                 if (finded == false) {
                     let amount = document.getElementById(`amount${coffee.id}`);
+                    if (parseInt(amount.value) <= 0) {
+                        amount.value = 1;
+                    }
                     added.push({type: coffee.name, price: coffee.price, amount: parseInt(amount.value)});
                     addToDataBase(coffee);
                     added.forEach(e=> {
