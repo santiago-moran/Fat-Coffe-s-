@@ -105,9 +105,7 @@ const addToCart = async () => {
         if (addBtn != null) {
             addBtn.addEventListener('click', () => {
                 let finded = false;
-                if (cartLength.style.display == 'none') {
-                    cartLength.style.display = 'flex';
-                }
+                cartLength.style.display = 'flex';
                 if (added.length == 0) {
                     shopCart.innerHTML = '';
                     subTotal.style.display = 'block';
