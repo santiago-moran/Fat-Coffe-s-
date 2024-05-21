@@ -45,6 +45,22 @@ h2 {
     align-items: center;
     width: 60px;
 }
+.fa-cart-shopping {
+    position: relative;
+}
+.fa-cart-shopping div {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    font-size: 12px;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #f00a;
+}
 #inputSearchContainer {
     position: absolute;
     top: 0;
